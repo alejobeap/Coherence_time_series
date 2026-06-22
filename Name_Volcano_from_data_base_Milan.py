@@ -9,7 +9,7 @@ import os
 
 # Validate input arguments
 if len(sys.argv) < 2:
-    print("Usage: python VER_Nombre_volcan.py <volcano_name>")
+    print("Usage: python Name_Volcano_from_data_base_Milan.py <volcano_name>")
     sys.exit(1)
 
 # Get volcano name from command-line arguments
