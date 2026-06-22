@@ -11,7 +11,7 @@ NUMERO=$2
 
 # Si NUMERO no se pasa como argumento, lo buscamos con Python
 if [ -z "$NUMERO" ]; then
-    NUMERO=$(python3 /gws/ssde/j25a/nceo_geohazards/vol1/projects/COMET/DEEPVolc_Pedro/SCRIPTS/VER_Nombre_volcan_V2.py "$NOMBRE" | tr -d '[]')
+    NUMERO=$(python3 /gws/ssde/j25a/nceo_geohazards/vol1/projects/COMET/DEEPVolc_Pedro/SCRIPTS/Name_Volcano_from_data_base_Mila.py "$NOMBRE" | tr -d '[]')
     if [ $? -ne 0 ] || [ -z "$NUMERO" ]; then
         echo "Error executing VER_Nombre_volcan_V2.py or empty value"
         exit 1
