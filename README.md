@@ -81,3 +81,9 @@ clip_info2.py --area 25
 
 # Run clipped-area processing
 jasmin_run_cmd_clip.sh
+
+# =========================
+# Volcano test Portal DEEPVolc
+# =========================
+# Copy for DEEPvolcano test portal
+Copyfiles.sh
