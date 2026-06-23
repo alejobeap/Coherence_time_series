@@ -84,3 +84,47 @@ jasmin_run_cmd_clip.sh
 
 # Copy for DEEPvolcano test portal
 Copyfiles.sh
+
+
+
+#### NOTES #####
+
+
+Before running the processing, it is best to check that your volcano is included in this file.
+
+/gws/ssde/j25a/nceo_geohazards/vol1/projects/COMET/DEEPVolc_Pedro/SCRIPTS_paper/Coherence_time_series/Volcanes_Chiles.txt
+
+I added the new volcano using the following format:
+nombre_volcan lon lat distancia
+"Oi_Doinyo_Lengai" 35.914 -2.764 214
+The first column corresponds to the volcano name. I enclosed the name in quotation marks because it contains underscores, but it should still be treated as a single name (just as Fernandina would be).
+Second column is Longitud
+The thrid column is Latitudes
+The fourth column is the ID. I will update this field for all volcanoes.
+Please let me know if this format works for you.
+
+The script Name_Volcano_from_data_base_Milan.py "volcano_name" is used to find the volcano ID. Usually, you only need part of the volcano name. For example, using Lengai should be enough.
+
+However, sometimes it can be difficult because the volcano name in the database may not match the name you expect, even if you try several variations. In those cases, what I usually do is first identify the volcano and the frame in the LiCSAR map. Then I run:
+
+frame2listvolcanes.py <frame>
+
+This script returns the volcanoes associated with that frame, allowing you to see exactly how the volcano name is written in the database.
+
+If that still does not help, I look for a nearby volcano that is listed before or after it in the output and adjust the ID accordingly. To verify the correct volcano, you can download or open the DEM image from:
+
+/gws/ssde/j25a/nceo_geohazards/vol1/projects/LiCS/proc/current/subsets/volc/ID/
+
+Enter the corresponding track folder and look in:
+
+GEOC.MLI.30m/<masterdate>/*.mli.tif
+
+or the PNG version.
+
+For example:
+
+/gws/ssde/j25a/nceo_geohazards/vol1/projects/LiCS/proc/current/subsets/volc/214/130A/GEOC.MLI.30m/20190509/20190509.geo.mli.tif
+
+Open the TIFF in QGIS (or the PNG image) and check whether it corresponds to the volcano you are looking for.
+
+
